@@ -5,10 +5,11 @@ import Avatar from './components/Avatar';
 import TodoList from './components/ToDoList';
 import Profile from './components/profile';
 import { getImageUrl } from './components/utils';
+import PackingList from './components/PackingList';
 
 function App() {
   return (
-    <div className='App'>
+    <div >
       <h1 className='App'>Amzing Scientists</h1>
       {/* <Gallery />
       <Gallery />
@@ -17,7 +18,8 @@ function App() {
       {/* <Todo /> */}
       {/* <Avatar /> */}
       {/* <TodoList /> */}
-      <Profile />
+      {/* <Profile /> */}
+      <PackingList />
 
 
     </div>
