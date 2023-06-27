@@ -6,6 +6,7 @@ import TodoList from './components/ToDoList';
 import Profile from './components/profile';
 import { getImageUrl } from './components/utils';
 import PackingList from './components/PackingList';
+import List from './components/List';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Avatar /> */}
       {/* <TodoList /> */}
       {/* <Profile /> */}
-      <PackingList />
+      {/* <PackingList /> */}
+      <List />
 
 
     </div>
