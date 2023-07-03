@@ -1,27 +1,33 @@
-import { useState } from 'react';
-
-export default function Form() {
-  const [isSent, setIsSent] = useState(false);
-  const [message, setMessage] = useState('Hi!');
-  if (isSent) {
-    return <h1>Your message is on its way!</h1>
+export default function Form({
+    // Try 'submitting', 'error', 'success':
+    status = 'error'
+  }) {
+    if (status === 'success') {
+      return <h1>That's right!</h1>
+    }
+    return (
+      <>
+        <h2>City quiz</h2>
+        <p>
+          In which city is there a billboard that turns air into drinkable water?
+        </p>
+        <form>
+          <textarea disabled={
+            status === 'submitting'
+          } />
+          <br />
+          <button disabled={
+            status === 'empty' ||
+            status === 'submitting'
+          }>
+            Submit
+          </button>
+          {status === 'error' &&
+            <p className="Error">
+              Good guess but a wrong answer. Try again!
+            </p>
+          }
+        </form>
+        </>
+    );
   }
-  return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      setIsSent(true);
-      sendMessage(message);
-    }}>
-      <textarea
-        placeholder="Message"
-        value={message}
-        onChange={e => setMessage(e.target.value)}
-      />
-      <button type="submit">Send</button>
-    </form>
-  );
-}
-
-function sendMessage(message) {
-  // ...
-}
